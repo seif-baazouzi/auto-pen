@@ -1,0 +1,3 @@
+https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist
+https://steflan-security.com/linux-privilege-escalation-suid-binaries/
+https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/

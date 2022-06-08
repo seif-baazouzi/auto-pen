@@ -1,0 +1,398 @@
+@font-face {
+  font-family: "Catamaran";
+  src: url("../fonts/Catamaran.ttf");
+}
+
+/**************************************************************************
+***************************************************************************
+******************************* RESET STYLES ******************************
+***************************************************************************
+**************************************************************************/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #4f4fed;
+  --black: #111;
+  --white: #fff;
+  --red: #ca3e47;
+  --bg: #fbfbfb;
+  --gray: #ededed;
+  --dark-gray: #454545;
+  --shadow: 0 .025rem .25rem rgba(0, 0, 0, .1);
+}
+
+input, button {
+  border: none;
+  outline: none;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 480px) {
+  html { font-size: 1.1rem }
+}
+
+@media screen and (min-width: 768px) {
+  html { font-size: 1.2rem }
+}
+
+@media screen and (min-width: 1024px) {
+  html { font-size: 1.3rem }
+}
+
+@media screen and (min-width: 1200px) {
+  html { font-size: 1.4rem }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/**************************************************************************
+***************************************************************************
+****************************** GLOBAL STYLES ******************************
+***************************************************************************
+**************************************************************************/
+
+body {
+  line-height: 1.25;
+  color: var(--black);
+  font-family: "Catamaran";
+  background-color: var(--bg);
+  overflow-x: hidden;
+}
+
+body > svg {
+  display: none;
+}
+
+a.btn {
+  font-size: .75rem;
+  font-weight: bold;
+  color: var(--black);
+  padding: .5em .75em;
+  border-radius: .25em;
+  background-color: var(--gray);
+  cursor: pointer;
+}
+
+a.btn.primary {
+  color: var(--white);
+  background-color: var(--primary);  
+}
+
+a.btn:hover {
+  background-color: var(--dark-gray);
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: 100%;
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  position: relative;
+}
+
+/**************************************************************************
+***************************************************************************
+****************************** NAVBAR STYLES ******************************
+***************************************************************************
+**************************************************************************/
+
+nav {
+  width: 100%;
+  box-shadow: var(--shadow);
+  background-color: var(--white);
+  position: fixed;
+  top: 0; left: 0;
+  transition: top .3s ease-in;
+  z-index: 10;
+}
+
+nav.active {
+  top: -4rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 0 auto;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: var(--black);
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.logo:hover {
+  color: var(--primary);
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li {
+  list-style: none;
+  padding-right: .75rem;
+}
+
+li:last-child {
+  padding-right: 0;
+}
+
+ul a {
+  display: block;
+  font-size: .6rem;
+  color: var(--dark-gray);
+  transition: opacity .1s ease-in;
+  opacity: .7;
+}
+
+ul a.active {
+  opacity: 1;
+  color: var(--primary);
+}
+
+ul a:hover {
+  opacity: 1;
+}
+
+nav .btn {
+  color: var(--white);
+  display: block;
+  font-size: .5rem;
+  font-weight: bold;
+  margin-left: .5rem;
+  border-radius: 1em;
+  padding: .75em 1.5em;
+  background-color: var(--primary);
+  transition: background .3s ease-in;
+  cursor: pointer;
+}
+
+nav .btn:hover {
+  background-color: var(--dark-gray);
+}
+
+#burger {
+  width: 1rem;
+  display: none;
+  cursor: pointer;
+}
+
+#burger div {
+  width: 100%;
+  height: .125rem;
+  margin: .1rem 0;
+  background-color: var(--dark-gray);
+  transition: .3s;
+}
+
+#burger.x div:nth-child(1) {
+  transform: rotate(45deg) translate(.25rem, .125rem);
+}
+
+#burger.x div:nth-child(2) {
+  opacity: 0;
+}
+
+#burger.x div:nth-child(3) {
+  transform: rotate(-45deg) translate(.25rem, -.125rem);
+}
+
+@media screen and (max-width: 768px) {
+  ul {
+    width: 100%;
+    padding: 1rem 0;
+    position: absolute;
+    top: 3rem; left: 0;
+    flex-direction: column;
+    background-color: var(--white);
+    transition: top .3s ease-in;
+  }
+
+  li {
+    padding: 0;
+    width: 100%;
+  }
+
+  ul a {
+    width: 100%;
+    padding: .75rem 0;
+    text-align: center;
+  }
+
+  ul a:hover {
+    background-color: var(--bg);
+  }
+
+  ul.hide {
+    top: -120vh;
+  }
+
+  nav .btn {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 1rem;
+    border-radius: 0;
+  }
+
+  #burger {
+    display: block;
+  }
+}
+
+/**************************************************************************
+***************************************************************************
+*************************** HERO SECTION STYLES ***************************
+***************************************************************************
+**************************************************************************/
+
+#hero {
+  background-size: cover;
+  background-position: center;
+  background-image: url("../images/bg.jpg");
+}
+
+#hero::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  background-color: rgba(0, 0, 0, .8);
+}
+
+#hero h1 {
+  font-size: 5rem;
+  color: var(--white);
+}
+
+#hero p {
+  font-size: 1.25rem;
+  color: var(--gray);
+  margin: 1rem 0;
+}
+
+/**************************************************************************
+***************************************************************************
+************************* PROJECTS SECTION STYLES *************************
+***************************************************************************
+**************************************************************************/
+
+.project-item {
+  width: 100%;
+  padding: 1rem 1rem 2rem;
+  margin: .5rem 0;
+  position: relative;
+  box-shadow: var(--shadow);
+  background-color: var(--white);
+}
+
+.project-item .header {
+  display: flex;
+  align-items: center;
+}
+
+.project-item h3 {
+  font-size: 1rem;
+  margin-left: .5rem;
+  color: var(--dark-gray);
+}
+
+.project-item svg {
+  height: 1.5rem;
+  fill: var(--primary);
+}
+
+.project-item p {
+  font-size: .75rem;
+  margin-top: .75rem;
+}
+
+.project-item .links {
+  margin-top: .75rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 1rem; right: 1rem;
+}
+
+.project-item .links a {
+  font-size: .6rem;
+  font-weight: bold;
+  color: var(--primary);
+  transition: color .3s ease-in;
+}
+
+.project-item .links a:hover {
+  color: var(--dark-gray);
+}
+
+@media screen and (min-width: 768px) {
+  .projects-list {
+    display: flex;
+  }
+
+  .project-item {
+    margin-left: .5rem;
+  }
+
+  .project-item:first-child {
+    margin-left: 0;
+  }
+}
+
+/**************************************************************************
+***************************************************************************
+****************************** FOOTER STYLES ******************************
+***************************************************************************
+**************************************************************************/
+
+footer {
+  color: var(--white);
+  font-weight: bold;
+  background-color: var(--black);
+}
+
+footer .content {
+  line-height: 3;
+  font-size: .75rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  footer {
+    display: flex;
+    justify-content: space-around;
+  }
+}

@@ -1,0 +1,38 @@
+POST http://127.0.0.1:5000/user/login
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "password"
+}
+
+###
+
+POST http://127.0.0.1:5000/user/signup
+Content-Type: application/json
+
+{
+  "email": "exploit@exploit.com",
+  "password": "exploit"
+}
+
+###
+
+
+GET http://127.0.0.1:5000/user/apikey
+X-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4cGxvaXRAZXhwbG9pdC5jb20ifQ.OpQ7CZG8SV42Kya_8bqsWrFKwCBo8mQb3KsBCAV5_RM
+
+###
+
+PATCH http://127.0.0.1:5000/user/apikey
+X-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4cGxvaXRAZXhwbG9pdC5jb20ifQ.OpQ7CZG8SV42Kya_8bqsWrFKwCBo8mQb3KsBCAV5_RM
+
+###
+
+GET http://127.0.0.1:5000/user/logs?page=1
+X-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4cGxvaXRAZXhwbG9pdC5jb20ifQ.OpQ7CZG8SV42Kya_8bqsWrFKwCBo8mQb3KsBCAV5_RM
+
+###
+
+GET http://127.0.0.1:5000/user/statistics
+X-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4cGxvaXRAZXhwbG9pdC5jb20ifQ.OpQ7CZG8SV42Kya_8bqsWrFKwCBo8mQb3KsBCAV5_RM

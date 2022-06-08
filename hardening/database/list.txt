@@ -1,0 +1,16 @@
+[x] nginx
+[x] apache
+[x] php 
+[x] laravel
+[x] mysql
+[x] postgres
+[x] django
+[x] flask
+[ ] mongo
+[ ] express
+[ ] ruby on rails 
+[ ] .net 
+[ ] spring 
+[x] react
+[ ] angular 
+[ ] vue.js

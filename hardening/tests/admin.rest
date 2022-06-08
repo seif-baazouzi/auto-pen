@@ -1,0 +1,29 @@
+POST http://127.0.0.1:5000/admin/login
+Content-Type: application/json
+
+{
+  "username": "admin132",
+  "password": "admin"
+}
+
+###
+
+PATCH http://127.0.0.1:5000/admin/settings/update-password
+Content-Type: application/json
+X-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6ImFkbWluIn0.iKSORRDY4qzoGswcVq_6OYUFDDomglItHZSKFCJlap8
+
+{
+  "oldpwd": "password",
+  "newpwd": "admin"
+}
+
+###
+
+PATCH http://127.0.0.1:5000/admin/settings/update-username
+Content-Type: application/json
+X-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6ImFkbWluIn0.iKSORRDY4qzoGswcVq_6OYUFDDomglItHZSKFCJlap8
+
+{
+  "username": "admin",
+  "password": "admin"
+}

@@ -1,0 +1,76 @@
+version: '3'
+
+services:
+  exploit-app:
+    build: ./exploit-web-site/app
+    restart: always
+    extra_hosts:
+      - "api.exploit.auto-pen.local:172.17.0.1"
+    depends_on:
+      - exploit-api
+
+  exploit-api:
+    build: ./exploit-web-site/api
+    restart: always
+    environment:
+      - JWT_SECRET=secret
+      - DB_HOSTNAME=mongo
+      - HOST_IP=172.17.0.1 
+    depends_on:
+      - mongo
+
+  save-reports:
+    build: ./exploit-web-site/save-reports
+    restart: always
+    environment:
+      - DB_HOSTNAME=mongo
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - exploit-mongo:/data/db
+
+  hardening-app:
+    build: ./hardening/app
+    restart: always
+    depends_on:
+      - hardening-api
+  
+  hardening-api:
+    build: ./hardening/src/hardening
+    restart: always
+    environment:
+      - DB_HOST=postgresql
+      - DB_USER=postgres
+      - DB_PASSWORD=password
+      - DB_NAME=hardening
+      - JWT_SECRET=secret
+      - REDIS_HOSTNAME=redis
+    depends_on:
+      - postgresql
+      - redis
+  
+  postgresql:
+    build: ./hardening/database
+    restart: always
+    volumes:
+      - hardening-postgresql:/var/lib/postgresql
+
+  redis:
+    image: redis
+
+  nginx:
+    build: ./nginx
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - exploit-app
+      - hardening-app
+
+volumes:
+  exploit-mongo:
+  hardening-postgresql:

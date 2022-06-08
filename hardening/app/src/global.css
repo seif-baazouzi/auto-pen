@@ -1,0 +1,84 @@
+@font-face {
+	font-family: "Catamaran";
+	src: url("/Catamaran.ttf");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--black: #111;
+	--dark-gray: #454545;
+	
+	--gray: #ededed;
+	--bg: #fbfbfb;
+	--white: #fff;
+	
+	--light-blue: #f3f3fe;
+	--primary: #4660e7;
+	--error: #ca3e47;
+
+	--shadow: 0 .005rem .125rem rgba(0, 0, 0, .2);
+	--max-width: 1920px;
+}
+
+body {
+	color: var(--black);
+	font-family: "Catamaran";
+	background-color: var(--bg);
+}
+
+a {
+	text-decoration: none;
+}
+
+/* font sizes */
+
+@media screen and (min-width: 480px) {
+	html { font-size: 1.1rem }
+}
+
+@media screen and (min-width: 768px) {
+	html { font-size: 1.2rem }
+}
+
+@media screen and (min-width: 1024px) {
+	html { font-size: 1.3rem }
+}
+
+@media screen and (min-width: 1200px) {
+	html { font-size: 1.4rem }
+}
+
+/* global styles */
+
+h1.msg {
+	margin: 2rem 0;
+	font-size: 2rem;
+	text-align: center;
+}
+
+button {
+	border: none;
+	outline: none;
+	font-size: .75rem;
+	padding: .5em 1em;
+	border-radius: .25em;
+	cursor: pointer;
+}
+
+label {
+	display: block;
+}
+
+input, select, textarea {
+	padding: 0.5em;
+	font-size: .75rem;
+	border-radius: .25em;
+	border: .075em solid var(--gray);
+	font-family: "Poppins";
+}
+

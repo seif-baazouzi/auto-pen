@@ -1,0 +1,41 @@
+GET http://127.0.0.1:5000/technologies
+X-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6ImFkbWluIn0.iKSORRDY4qzoGswcVq_6OYUFDDomglItHZSKFCJlap8
+
+###
+
+GET http://127.0.0.1:5000/technologies/nginx,php,laravel
+X-Apikey: 439b3f3b-860c-4048-b9b2-5965eed80bb3
+
+###
+
+POST http://127.0.0.1:5000/technologies
+Content-Type: application/json
+X-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6ImFkbWluIn0.iKSORRDY4qzoGswcVq_6OYUFDDomglItHZSKFCJlap8
+
+{
+  "name": "nginx",
+  "hardening": "nginx hardening"
+}
+
+###
+
+PUT http://127.0.0.1:5000/technologies/nginx
+Content-Type: application/json
+X-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6ImFkbWluIn0.iKSORRDY4qzoGswcVq_6OYUFDDomglItHZSKFCJlap8
+
+{
+  "name": "nginx",
+  "hardening": "nginx hardening edited"
+}
+
+###
+
+DELETE  http://127.0.0.1:5000/technologies/nginx
+Content-Type: application/json
+X-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6ImFkbWluIn0.iKSORRDY4qzoGswcVq_6OYUFDDomglItHZSKFCJlap8
+
+###
+
+DELETE  http://127.0.0.1:5000/technologies
+Content-Type: application/json
+X-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6ImFkbWluIn0.iKSORRDY4qzoGswcVq_6OYUFDDomglItHZSKFCJlap8
